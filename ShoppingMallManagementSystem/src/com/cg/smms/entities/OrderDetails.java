@@ -3,9 +3,7 @@ package com.cg.smms.entities;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "order")
@@ -14,6 +12,7 @@ public class OrderDetails implements Serializable {
 	private static final long serialVersionUID = 1L;
 //	id
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO) // AutoIncrement
 	private int id;
 
 	public int getId() {
@@ -47,6 +46,7 @@ public class OrderDetails implements Serializable {
 	}
 
 //	customer_id
+	@ManyToOne
 	private Customer customer_id;
 
 	public Customer getCustomer_id() {
@@ -69,6 +69,8 @@ public class OrderDetails implements Serializable {
 	}
 
 //	shop_id
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn
 	private Shop shop_id;
 
 	public Shop getShop_id() {

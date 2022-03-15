@@ -50,7 +50,6 @@ public class CustomerRepository implements ICustomerRepository {
 	@Override
 	public void commitTransaction() {
 		entityManager.getTransaction().commit();
-
 	}
 
 }

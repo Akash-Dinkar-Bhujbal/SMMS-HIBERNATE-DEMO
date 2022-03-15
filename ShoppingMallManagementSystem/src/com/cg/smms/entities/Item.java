@@ -3,10 +3,7 @@ package com.cg.smms.entities;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
+import javax.persistence.*;
 
 @Entity
 @Table(name = "item")
@@ -15,6 +12,7 @@ public class Item implements Serializable {
 	private static final long serialVersionUID = 1L;
 //	id
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO) // AutoIncrement
 	private long id;
 
 	public long getId() {
@@ -47,15 +45,15 @@ public class Item implements Serializable {
 		this.manufacturing = manufacturing;
 	}
 
-//	LocalDate
-	private LocalDate LocalDate;
+//	expiry
+	private LocalDate expiry;
 
-	public LocalDate getLocalDate() {
-		return LocalDate;
+	public LocalDate getExpiry() {
+		return expiry;
 	}
 
-	public void setLocalDate(LocalDate localDate) {
-		LocalDate = localDate;
+	public void setExpiry(LocalDate expiry) {
+		this.expiry = expiry;
 	}
 
 //	price

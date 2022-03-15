@@ -1,17 +1,16 @@
 package com.cg.smms.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "customer")
 public class Customer implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 //	id
 	@Id
 	private int id;
@@ -35,7 +34,20 @@ public class Customer implements Serializable {
 		this.name = name;
 	}
 
-//	phone
+//	order
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "order_id")
+	private List<OrderDetails> orders;
+
+	public List<OrderDetails> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(List<OrderDetails> orders) {
+		this.orders = orders;
+	}
+
+	// phone
 	private String phone;
 
 	public String getPhone() {

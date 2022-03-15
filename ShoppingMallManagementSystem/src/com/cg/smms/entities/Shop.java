@@ -1,13 +1,9 @@
 package com.cg.smms.entities;
 
-import java.io.Serializable;
+import java.io.*;
+import java.util.*;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "shop")
@@ -16,8 +12,10 @@ public class Shop implements Serializable {
 	private static final long serialVersionUID = 1L;
 //	shopId
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO) // AutoIncrement
 	private int shopId;
 
+// AutoIncrment
 	public int getShopId() {
 		return shopId;
 	}
@@ -38,17 +36,20 @@ public class Shop implements Serializable {
 	}
 
 //	shopEmployeeID
-	private Employee shopEmployeeID;
+//	private Employee shopEmployeeID;
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name="id")
+	private List<Employee> employees;
 
-	public Employee getShopEmployeeID() {
-		return shopEmployeeID;
+	public List<Employee> getEmployees() {
+		return employees;
 	}
 
-	public void setShopEmployeeID(Employee shopEmployeeID) {
-		this.shopEmployeeID = shopEmployeeID;
+	public void setEmployees(List<Employee> employees) {
+		this.employees = employees;
 	}
 
-//	shopName
+	// shopName
 	private String shopName;
 
 	public String getShopName() {
@@ -82,6 +83,8 @@ public class Shop implements Serializable {
 	}
 
 //	shopOwner
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "ShopOwner_Id")
 	private ShopOwner shopOwner;
 
 	public ShopOwner getShopOwner() {
@@ -102,31 +105,5 @@ public class Shop implements Serializable {
 	public void setLeaseStatus(String leaseStatus) {
 		this.leaseStatus = leaseStatus;
 	}
-	
-//	Employee
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "empId")
-	private Employee employee;
 
-	public Employee getEmployee() {
-		return employee;
-	}
-
-	public void setEmployee(Employee employee) {
-		this.employee = employee;
-	}
-	
-//	Items
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "itemId")
-	private Item item;
-
-	public Item getItem() {
-		return item;
-	}
-
-	public void setItem(Item item) {
-		this.item = item;
-	}
-	
 }

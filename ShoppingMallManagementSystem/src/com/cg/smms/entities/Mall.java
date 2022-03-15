@@ -2,9 +2,7 @@ package com.cg.smms.entities;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "mall")
@@ -13,6 +11,7 @@ public class Mall implements Serializable {
 	private static final long serialVersionUID = 1L;
 //	Id
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO) // AutoIncrement
 	private long Id;
 
 	public long getId() {
@@ -24,6 +23,7 @@ public class Mall implements Serializable {
 	}
 
 //	mallAdmin
+	@OneToOne(cascade = CascadeType.ALL)
 	private MallAdmin mallAdmin;
 
 	public MallAdmin getMallAdmin() {

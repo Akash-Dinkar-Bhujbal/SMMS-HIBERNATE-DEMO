@@ -2,9 +2,7 @@ package com.cg.smms.entities;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "user")
@@ -13,6 +11,7 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 //	id
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO) // AutoIncrement
 	private int id;
 
 	public int getId() {
