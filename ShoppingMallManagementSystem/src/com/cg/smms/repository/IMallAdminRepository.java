@@ -12,4 +12,8 @@ public interface IMallAdminRepository {
 
 	MallAdmin deleteMallAdmin(long id);
 
+	void beginTransaction();
+
+	void commitTransaction();
+
 }

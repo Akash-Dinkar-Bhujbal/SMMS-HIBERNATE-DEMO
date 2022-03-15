@@ -11,4 +11,8 @@ public interface IOrderRepository {
 	OrderDetails searchOrder(long id);
 
 	OrderDetails deleteOrder(long id);
+
+	void beginTransaction();
+
+	void commitTransaction();
 }

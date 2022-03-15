@@ -36,7 +36,6 @@ public class CustomerRepository implements ICustomerRepository {
 //	deleteCustomer
 	@Override
 	public boolean deleteCustomer(long id) {
-		// TODO Auto-generated method stub
 		entityManager.remove(searchCustomer(id));
 		return true;
 	}

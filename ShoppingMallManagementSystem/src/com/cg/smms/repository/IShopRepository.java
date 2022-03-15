@@ -11,7 +11,8 @@ public interface IShopRepository {
 
 	boolean deleteShop(long id);
 
+	void beginTransaction();
+
 	void commitTransaction();
 
-	void beginTransaction();
 }

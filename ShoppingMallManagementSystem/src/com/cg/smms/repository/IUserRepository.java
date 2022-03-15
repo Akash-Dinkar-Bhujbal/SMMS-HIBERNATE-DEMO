@@ -9,4 +9,8 @@ public interface IUserRepository {
 	User updateUser(User user);
 
 	User deleteUser(long id);
+
+	void beginTransaction();
+
+	void commitTransaction();
 }

@@ -42,16 +42,16 @@ public class ItemRepository implements IItemRepository {
 		return item;
 	}
 
-//	commitTransaction
-	@Override
-	public void commitTransaction() {
-		entityManager.getTransaction().commit();
-	}
-
 //	beginTransaction
 	@Override
 	public void beginTransaction() {
 		entityManager.getTransaction().begin();
+	}
+
+//	commitTransaction
+	@Override
+	public void commitTransaction() {
+		entityManager.getTransaction().commit();
 	}
 
 }

@@ -75,6 +75,7 @@ public class ShopService implements IShopService {
 		return true;
 	}
 
+//	addItem
 	@Override
 	public Item addItem(Item item) {
 		// TODO Auto-generated method stub

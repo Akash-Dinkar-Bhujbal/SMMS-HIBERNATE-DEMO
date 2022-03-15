@@ -11,7 +11,8 @@ public interface IItemRepository {
 
 	Item deleteItem(long id);
 
+	void beginTransaction();
+
 	void commitTransaction();
 
-	void beginTransaction();
 }

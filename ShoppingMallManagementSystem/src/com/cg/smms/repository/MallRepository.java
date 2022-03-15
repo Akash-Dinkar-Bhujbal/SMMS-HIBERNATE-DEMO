@@ -2,32 +2,38 @@ package com.cg.smms.repository;
 
 import javax.persistence.EntityManager;
 
-import com.cg.smms.entities.User;
+import com.cg.smms.entities.Mall;
 
-public class UserRepository implements IUserRepository {
+public class MallRepository implements IMallRepository {
 	private EntityManager entityManager;
 
 //	Constructor
-	public UserRepository() {
+	public MallRepository() {
 		entityManager = JPAUtil.getEntityManager();
 	}
 
+//	addMall
 	@Override
-	public User addNewUser(User user) {
+	public Mall addMall(Mall mall) {
 		// TODO Auto-generated method stub
-		return null;
+		entityManager.persist(mall);
+		return mall;
 	}
 
+//	updateMall
 	@Override
-	public User updateUser(User user) {
+	public Mall updateMall(Mall mall) {
 		// TODO Auto-generated method stub
-		return null;
+		entityManager.merge(mall);
+		return mall;
 	}
 
+//	searchMall
 	@Override
-	public User deleteUser(long id) {
+	public Mall searchMall(long id) {
 		// TODO Auto-generated method stub
-		return null;
+		Mall mall = entityManager.find(Mall.class, id);
+		return mall;
 	}
 
 //	beginTransaction
