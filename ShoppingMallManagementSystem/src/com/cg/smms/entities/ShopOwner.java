@@ -14,14 +14,15 @@ public class ShopOwner implements Serializable {
 //	id
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO) // AutoIncrement
-	private int id;
+	@OneToOne(mappedBy = "shop_Id")
+	private int ShopOwner_Id;
 
-	public int getId() {
-		return id;
+	public int getShopOwner_Id() {
+		return ShopOwner_Id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setShopOwner_Id(int ShopOwner_Id) {
+		this.ShopOwner_Id = ShopOwner_Id;
 	}
 
 //	name
@@ -57,9 +58,9 @@ public class ShopOwner implements Serializable {
 		this.address = address;
 	}
 
-//	shop_idS
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name="shop_id")
+//	shop_id
+	@OneToOne(mappedBy = "shop_id")
+//	@JoinColumn(name="shop_id")
 	/* IMP CHECK ONES */
 	private Shop shop_id;
 

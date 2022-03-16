@@ -13,9 +13,9 @@ public class Shop implements Serializable {
 //	shopId
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO) // AutoIncrement
+	@OneToOne
 	private int shopId;
 
-// AutoIncrment
 	public int getShopId() {
 		return shopId;
 	}
@@ -38,7 +38,7 @@ public class Shop implements Serializable {
 //	shopEmployeeID
 //	private Employee shopEmployeeID;
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name="id")
+	@JoinColumn(name = "id")
 	private List<Employee> employees;
 
 	public List<Employee> getEmployees() {
@@ -84,7 +84,7 @@ public class Shop implements Serializable {
 
 //	shopOwner
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "ShopOwner_Id")
+	@JoinColumn(name = "ShopOwner")
 	private ShopOwner shopOwner;
 
 	public ShopOwner getShopOwner() {

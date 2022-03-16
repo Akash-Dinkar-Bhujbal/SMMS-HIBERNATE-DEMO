@@ -2,11 +2,8 @@ package com.cg.smms.application;
 
 import java.time.LocalDate;
 
-import com.cg.smms.entities.Employee;
 import com.cg.smms.entities.Shop;
 import com.cg.smms.entities.ShopOwner;
-import com.cg.smms.repository.EmployeeRepository;
-import com.cg.smms.repository.IEmployeeRepository;
 import com.cg.smms.repository.IShopOwnerRepository;
 import com.cg.smms.repository.ShopOwnerRepository;
 import com.cg.smms.service.IShopService;
@@ -39,15 +36,15 @@ public class ShopApp {
 //
 //		shop.setEmployees(employee);
 
-		shopOwner.setId(10);
+		shopOwner.setShopOwner_Id(10);
 		shopOwner.setName("Akash");
 		shopOwner.setDob(LocalDate.now());
 		shopOwner.setAddress("A10, Mumbai");
 		shopOwner.setShop_id(shop);
 		shop.setShopOwner(shopOwner);
-		
+
 		serviceShopOwner.addShopOwner(shopOwner);
-		serviceShop.addShop(shop);
+		serviceShop.addShop(shop);//<---------------
 
 		shop = serviceShop.searchShopById(100);
 
