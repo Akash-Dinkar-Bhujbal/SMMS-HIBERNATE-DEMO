@@ -8,9 +8,9 @@ public interface IMallAdminRepository {
 
 	MallAdmin updateMallAdmin(MallAdmin mallAdmin);
 
-	MallAdmin searchMallAdmin(long id);
+	MallAdmin searchMallAdmin(int id);
 
-	MallAdmin deleteMallAdmin(long id);
+	MallAdmin deleteMallAdmin(int id);
 
 	void beginTransaction();
 

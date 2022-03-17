@@ -18,6 +18,7 @@ public class EmployeeService implements IEmployeeService {
 		EmployeeDAO.beginTransaction();
 		EmployeeDAO.addEmployee(employee);
 		EmployeeDAO.commitTransaction();
+		System.out.println("1Employee is Added");
 		return employee;
 	}
 
@@ -32,14 +33,14 @@ public class EmployeeService implements IEmployeeService {
 
 //	searchEmployee
 	@Override
-	public Employee searchEmployee(long id) {
+	public Employee searchEmployee(int id) {
 		Employee employee = EmployeeDAO.searchEmployee(id);
 		return employee;
 	}
 
 //	deleteEmployee
 	@Override
-	public Boolean deleteEmployee(long id) {
+	public boolean deleteEmployee(int id) {
 		EmployeeDAO.beginTransaction();
 		EmployeeDAO.deleteEmployee(id);
 		EmployeeDAO.commitTransaction();

@@ -44,7 +44,7 @@ public class OrderService implements IOrderService {
 
 //	OrderDetails
 	@Override
-	public OrderDetails searchOrder(long id) {
+	public OrderDetails searchOrder(int id) {
 		// TODO Auto-generated method stub
 		OrderDetails order = searchOrder(id);
 		return order;
@@ -52,7 +52,7 @@ public class OrderService implements IOrderService {
 
 //	cancelMall
 	@Override
-	public Boolean cancelMall(long id) {
+	public Boolean cancelMall(int id) {
 		// TODO Auto-generated method stub
 //		Work pending:
 		MallDAO.beginTransaction();

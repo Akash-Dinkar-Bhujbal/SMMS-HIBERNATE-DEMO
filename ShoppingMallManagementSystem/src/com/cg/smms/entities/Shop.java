@@ -11,9 +11,11 @@ public class Shop implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 //	shopId
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO) // AutoIncrement
-	@OneToOne
+	@Id // PK
+	@Column(name = "shopId")
+	@GeneratedValue(strategy = GenerationType.IDENTITY) 
+//	@OneToOne(mappedBy = "shop") // current table
+//	@JoinColumn(name = "shopId")
 	private int shopId;
 
 	public int getShopId() {
@@ -37,9 +39,10 @@ public class Shop implements Serializable {
 
 //	shopEmployeeID
 //	private Employee shopEmployeeID;
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "id")
-	private List<Employee> employees;
+	@OneToMany(mappedBy = "shop_id")
+//	(mappedBy = "shop")
+//	@JoinColumn(name = "shopEmployeeID") // FK
+	private List<Employee> employees = new ArrayList<Employee>();
 
 	public List<Employee> getEmployees() {
 		return employees;
@@ -84,18 +87,18 @@ public class Shop implements Serializable {
 
 //	shopOwner
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "ShopOwner")
-	private ShopOwner shopOwner;
+	@JoinColumn(name = "shopOwnerId") // FK
+	private ShopOwner shopOwnerId;
 
-	public ShopOwner getShopOwner() {
-		return shopOwner;
+	public ShopOwner getShopOwnerId() {
+		return shopOwnerId;
 	}
 
-	public void setShopOwner(ShopOwner shopOwner) {
-		this.shopOwner = shopOwner;
+	public void setShopOwnerId(ShopOwner shopOwnerId) {
+		this.shopOwnerId = shopOwnerId;
 	}
 
-//	leaseStatus
+	// leaseStatus
 	private String leaseStatus;
 
 	public String getLeaseStatus() {

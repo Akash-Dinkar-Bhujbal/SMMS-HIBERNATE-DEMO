@@ -8,9 +8,9 @@ public interface IEmployeeRepository {
 
 	Employee updateEmployee(Employee employee);
 
-	Employee searchEmployee(long id);
+	Employee searchEmployee(int id);
 
-	boolean deleteEmployee(long id);
+	boolean deleteEmployee(int id);
 
 	void beginTransaction();
 

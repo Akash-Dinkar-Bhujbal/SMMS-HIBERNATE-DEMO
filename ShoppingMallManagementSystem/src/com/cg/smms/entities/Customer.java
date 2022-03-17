@@ -36,7 +36,7 @@ public class Customer implements Serializable {
 
 //	order
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "order_id")
+	@JoinColumn(name = "order_id") // FK
 	private List<OrderDetails> orders;
 
 	public List<OrderDetails> getOrders() {

@@ -3,12 +3,12 @@ package com.cg.smms.service;
 import com.cg.smms.entities.Employee;
 
 public interface IEmployeeService {
-	
+
 	Employee addEmployee(Employee employee);
 
 	Employee updateEmployee(Employee employee);
 
-	Employee searchEmployee(long id);
+	Employee searchEmployee(int id);
 
-	Boolean deleteEmployee(long id);
+	boolean deleteEmployee(int id);
 }

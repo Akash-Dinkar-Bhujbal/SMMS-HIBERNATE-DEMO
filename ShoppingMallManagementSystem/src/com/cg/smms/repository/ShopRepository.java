@@ -28,15 +28,15 @@ public class ShopRepository implements IShopRepository {
 
 //	searchShopById
 	@Override
-	public Shop searchShopById(long id) {
+	public Shop searchShopById(int id) {
 		Shop shop = entityManager.find(Shop.class, id);
 		return shop;
 	}
 
 //	deleteShop
 	@Override
-	public boolean deleteShop(long id) {
-		entityManager.remove(searchShopById(id));
+	public boolean deleteShop(int shopId) {
+		entityManager.remove(searchShopById(shopId));
 		return true;
 	}
 

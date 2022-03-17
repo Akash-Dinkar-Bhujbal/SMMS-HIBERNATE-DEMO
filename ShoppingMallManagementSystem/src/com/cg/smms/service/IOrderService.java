@@ -8,9 +8,9 @@ public interface IOrderService {
 
 	OrderDetails updateOrder(OrderDetails order);
 
-	OrderDetails searchOrder(long id);
+	OrderDetails searchOrder(int id);
 
-	Boolean cancelMall(long id);
+	Boolean cancelMall(int id);
 
 	Item addItem(Item item);
 

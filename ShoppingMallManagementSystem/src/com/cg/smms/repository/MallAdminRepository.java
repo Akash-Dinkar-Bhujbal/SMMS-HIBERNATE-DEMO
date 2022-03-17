@@ -29,14 +29,14 @@ public class MallAdminRepository implements IMallAdminRepository {
 
 //	searchMallAdmin
 	@Override
-	public MallAdmin searchMallAdmin(long id) {
+	public MallAdmin searchMallAdmin(int id) {
 		MallAdmin mallAdmin = entityManager.find(MallAdmin.class, id);
 		return mallAdmin;
 	}
 
 //	deleteMallAdmin
 	@Override
-	public MallAdmin deleteMallAdmin(long id) {
+	public MallAdmin deleteMallAdmin(int id) {
 		MallAdmin mallAdmin = entityManager.find(MallAdmin.class, id);
 		entityManager.remove(searchMallAdmin(id));
 		return mallAdmin;

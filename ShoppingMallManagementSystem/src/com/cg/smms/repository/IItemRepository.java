@@ -7,9 +7,9 @@ public interface IItemRepository {
 
 	Item updateItem(Item item);
 
-	Item searchItem(long id);
+	Item searchItem(int id);
 
-	Item deleteItem(long id);
+	Item deleteItem(int id);
 
 	void beginTransaction();
 

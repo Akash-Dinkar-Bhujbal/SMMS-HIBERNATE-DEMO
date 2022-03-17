@@ -8,9 +8,9 @@ public interface IOrderRepository {
 
 	OrderDetails updateOrder(OrderDetails order);
 
-	OrderDetails searchOrder(long id);
+	OrderDetails searchOrder(int id);
 
-	OrderDetails deleteOrder(long id);
+	OrderDetails deleteOrder(int id);
 
 	void beginTransaction();
 

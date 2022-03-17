@@ -30,7 +30,7 @@ public class MallRepository implements IMallRepository {
 
 //	searchMall
 	@Override
-	public Mall searchMall(long id) {
+	public Mall searchMall(int id) {
 		// TODO Auto-generated method stub
 		Mall mall = entityManager.find(Mall.class, id);
 		return mall;

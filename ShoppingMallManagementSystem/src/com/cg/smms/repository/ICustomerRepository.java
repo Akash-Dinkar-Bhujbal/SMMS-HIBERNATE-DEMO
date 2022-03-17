@@ -7,9 +7,9 @@ public interface ICustomerRepository {
 
 	Customer updateCustomer(Customer customer);
 
-	Customer searchCustomer(long id);
+	Customer searchCustomer(int id);
 
-	boolean deleteCustomer(long id);
+	boolean deleteCustomer(int id);
 
 	void beginTransaction();
 

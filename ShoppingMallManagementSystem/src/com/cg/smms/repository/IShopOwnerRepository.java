@@ -8,9 +8,9 @@ public interface IShopOwnerRepository {
 
 	ShopOwner updateShopOwner(ShopOwner shopOwner);
 
-	ShopOwner searchShopOwner(long id);
+	ShopOwner searchShopOwner(int id);
 
-	boolean deleteShopOwner(long id);
+	ShopOwner deleteShopOwner(int id);
 
 	void commitTransaction();
 

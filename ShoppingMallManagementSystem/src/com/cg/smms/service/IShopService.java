@@ -3,19 +3,31 @@ package com.cg.smms.service;
 import com.cg.smms.entities.Employee;
 import com.cg.smms.entities.Item;
 import com.cg.smms.entities.Shop;
+import com.cg.smms.entities.ShopOwner;
 
 public interface IShopService {
 	Shop addShop(Shop shop);
 
 	Shop updateShop(Shop shop);
 
-	Shop searchShopById(long id);
+	Shop searchShopById(int shopId);
 
-	Boolean addEmployee(Employee employee);
+	boolean deleteShop(int shopId);
 
-	Employee updateEmployee(Employee employee);
+	ShopOwner addShopOwner(ShopOwner shopOwner);
 
-	Boolean deleteShop(long id);
+	ShopOwner updateShopOwner(ShopOwner shopOwner);
+
+	ShopOwner searchShopOwner(int shopOwnerId);
+
+	boolean deleteShopOwner(int shopOwnerId);
+
+	boolean addEmployee(Employee employee);
+
+	boolean updateEmployee(Employee employee);
+
+	boolean deleteEmployee(int id);
 
 	Item addItem(Item item);
+
 }

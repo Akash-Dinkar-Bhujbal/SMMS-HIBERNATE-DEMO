@@ -3,18 +3,17 @@ package com.cg.smms.entities;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "employee")
 public class Employee implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 //	id
-	@Id
+	@Id // PK
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	public int getId() {
@@ -81,6 +80,9 @@ public class Employee implements Serializable {
 	}
 
 //	shop_id
+	@ManyToOne
+//	(cascade = CascadeType.ALL)
+//	@JoinColumn(name = "shop_id") // FK
 	private Shop shop_id;
 
 	public Shop getShop_id() {

@@ -7,9 +7,9 @@ public interface IShopRepository {
 
 	Shop updateShop(Shop shop);
 
-	Shop searchShopById(long id);
+	Shop searchShopById(int id);
 
-	boolean deleteShop(long id);
+	boolean deleteShop(int id);
 
 	void beginTransaction();
 

@@ -54,14 +54,14 @@ public class CustomerService implements ICustomerService {
 	}
 
 	@Override
-	public Mall searchMall(long id) {
+	public Mall searchMall(int id) {
 		// TODO Auto-generated method stub
 //		work pending:
 		return null;
 	}
 
 	@Override
-	public Boolean cancelOrder(long orderId) {
+	public Boolean cancelOrder(int orderId) {
 		// TODO Auto-generated method stub
 //		work pending:
 		return false;

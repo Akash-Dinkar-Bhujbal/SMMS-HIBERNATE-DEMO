@@ -29,17 +29,19 @@ public class ShopOwnerRepository implements IShopOwnerRepository {
 
 //	searchShopOwner
 	@Override
-	public ShopOwner searchShopOwner(long id) {
+	public ShopOwner searchShopOwner(int id) {
 		ShopOwner shopOwner = entityManager.find(ShopOwner.class, id);
 		return shopOwner;
 	}
 
 //	deleteShopOwner
 	@Override
-	public boolean deleteShopOwner(long id) {
+	public ShopOwner deleteShopOwner(int id) {
 		// TODO Auto-generated method stub
-		entityManager.remove(searchShopOwner(id));
-		return true;
+		ShopOwner shopOwner = entityManager.find(ShopOwner.class, id);
+		 entityManager.remove(shopOwner);
+//		return true;
+		return shopOwner;
 	}
 
 //	beginTransaction

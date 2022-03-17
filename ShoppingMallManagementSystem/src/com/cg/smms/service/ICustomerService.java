@@ -11,9 +11,9 @@ public interface ICustomerService {
 
 	Item orderItem(Item item);
 
-	Mall searchMall(long id);
+	Mall searchMall(int id);
 
-	Boolean cancelOrder(long orderId);
+	Boolean cancelOrder(int orderId);
 
 	User login(User user);
 

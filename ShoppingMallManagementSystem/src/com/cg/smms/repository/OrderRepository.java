@@ -28,14 +28,14 @@ public class OrderRepository implements IOrderRepository {
 
 //	searchOrder
 	@Override
-	public OrderDetails searchOrder(long id) {
+	public OrderDetails searchOrder(int id) {
 		OrderDetails order = entityManager.find(OrderDetails.class, id);
 		return order;
 	}
 
 //	deleteOrder
 	@Override
-	public OrderDetails deleteOrder(long id) {
+	public OrderDetails deleteOrder(int id) {
 		OrderDetails order = entityManager.find(OrderDetails.class, id);
 		entityManager.remove(order);
 		return order;

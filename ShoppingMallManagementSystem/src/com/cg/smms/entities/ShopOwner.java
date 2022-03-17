@@ -12,20 +12,22 @@ public class ShopOwner implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 //	id
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO) // AutoIncrement
-	@OneToOne(mappedBy = "shop_Id")
-	private int ShopOwner_Id;
+	@Id // PK
+	@Column(name = "shopOwnerId")
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // AutoIncrement
+//	@OneToOne(cascade = CascadeType.ALL)
+//	@JoinColumn(name = "shopOwner")
+	private int shopOwnerId;
 
-	public int getShopOwner_Id() {
-		return ShopOwner_Id;
+	public int getShopOwnerId() {
+		return shopOwnerId;
 	}
 
-	public void setShopOwner_Id(int ShopOwner_Id) {
-		this.ShopOwner_Id = ShopOwner_Id;
+	public void setShopOwnerId(int shopOwnerId) {
+		this.shopOwnerId = shopOwnerId;
 	}
 
-//	name
+	// name
 	private String name;
 
 	public String getName() {
@@ -59,16 +61,18 @@ public class ShopOwner implements Serializable {
 	}
 
 //	shop_id
-	@OneToOne(mappedBy = "shop_id")
-//	@JoinColumn(name="shop_id")
+	@OneToOne(mappedBy = "shopowner") // current tablename //class name
+//	@OneToOne(cascade = CascadeType.ALL) 
+//	@JoinColumn(name = "shopId") // FK
 	/* IMP CHECK ONES */
-	private Shop shop_id;
+	private Shop shopId;
 
-	public Shop getShop_id() {
-		return shop_id;
+	public Shop getShopId() {
+		return shopId;
 	}
 
-	public void setShop_id(Shop shop_id) {
-		this.shop_id = shop_id;
+	public void setShopId(Shop shopId) {
+		this.shopId = shopId;
 	}
+
 }

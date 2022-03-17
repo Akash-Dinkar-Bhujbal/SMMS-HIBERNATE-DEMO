@@ -29,14 +29,14 @@ public class ItemRepository implements IItemRepository {
 
 //	searchItem
 	@Override
-	public Item searchItem(long id) {
+	public Item searchItem(int id) {
 		Item item = entityManager.find(Item.class, id);
 		return item;
 	}
 
 //	deleteItem
 	@Override
-	public Item deleteItem(long id) {
+	public Item deleteItem(int id) {
 		Item item = entityManager.find(Item.class, id);
 		entityManager.remove(searchItem(id));
 		return item;

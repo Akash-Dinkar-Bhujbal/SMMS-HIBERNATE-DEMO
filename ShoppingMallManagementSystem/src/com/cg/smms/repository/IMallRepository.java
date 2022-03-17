@@ -7,7 +7,7 @@ public interface IMallRepository {
 
 	Mall updateMall(Mall mall);
 
-	Mall searchMall(long id);
+	Mall searchMall(int id);
 
 	void beginTransaction();
 

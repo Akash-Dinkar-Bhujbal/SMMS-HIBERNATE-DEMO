@@ -2,12 +2,9 @@ package com.cg.smms.application;
 
 import java.time.LocalDate;
 
-import com.cg.smms.entities.Shop;
-import com.cg.smms.entities.ShopOwner;
-import com.cg.smms.repository.IShopOwnerRepository;
-import com.cg.smms.repository.ShopOwnerRepository;
-import com.cg.smms.service.IShopService;
-import com.cg.smms.service.ShopService;
+import com.cg.smms.entities.*;
+import com.cg.smms.repository.*;
+import com.cg.smms.service.*;
 
 public class ShopApp {
 
@@ -20,7 +17,7 @@ public class ShopApp {
 
 //		Service Object creation for Operational part:CRUD Operation
 		IShopService serviceShop = new ShopService();
-		IShopOwnerRepository serviceShopOwner = new ShopOwnerRepository();
+//		IShopOwnerSE serviceShopOwner = new ShopOwnerRepository();
 //		IEmployeeRepository serviceEmployee = new EmployeeRepository();
 
 		/* Create Operation */
@@ -28,27 +25,28 @@ public class ShopApp {
 		shop.setShopCategory("Food");
 		shop.setShopName("KFC");
 		shop.setShopStatus("Open");
+		shop.setLeaseStatus("Paid");
 
 //		employee.setId(5001);
 //		employee.setName("Raju");
 //		employee.setDob(LocalDate.of(2000, 28, 12));
-//		
+//		employee.setSalary(10000);
+//		employee.setDesignation("Worker");
+//		employee.setShop_id(shop);
 //
 //		shop.setEmployees(employee);
 
-		shopOwner.setShopOwner_Id(10);
-		shopOwner.setName("Akash");
-		shopOwner.setDob(LocalDate.now());
+		shopOwner.setShopOwnerId(10);
+		shopOwner.setName("Sham");
+		shopOwner.setDob(LocalDate.of(1990, 10, 10));//
 		shopOwner.setAddress("A10, Mumbai");
-		shopOwner.setShop_id(shop);
-		shop.setShopOwner(shopOwner);
 
-		serviceShopOwner.addShopOwner(shopOwner);
-		serviceShop.addShop(shop);//<---------------
+//		serviceEmployee.addEmployee(employee);
+		serviceShop.addShopOwner(shopOwner);
+		serviceShop.addShop(shop);// <---------------
 
-		shop = serviceShop.searchShopById(100);
+//		shop = serviceShop.searchShopById(100);
 
-		System.out.println();
 	}
 
 }
