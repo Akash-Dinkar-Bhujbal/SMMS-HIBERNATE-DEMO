@@ -13,14 +13,15 @@ public class EmpApp {
 		// TODO Auto-generated method stub
 		Employee emp = new Employee();
 		IEmployeeRepository serviceEmp = new EmployeeRepository();
-		IShopRepository serviceShop = new ShopRepository();
+//		IShopRepository serviceShop = new ShopRepository();
 //		emp.setId(500);
 		emp.setName("John");
 		emp.setSalary(10000);
 		emp.setAddress("Delhi");
 		emp.setDesignation("Worker");
-		Shop shop = serviceShop.searchShopById(100);
-		emp.setShop_id(shop);
+//		Shop shop = serviceShop.searchShopById(100);
+//		emp.setShop_id(shop);
+		serviceEmp.addEmployee(emp);
 	}
 
 }

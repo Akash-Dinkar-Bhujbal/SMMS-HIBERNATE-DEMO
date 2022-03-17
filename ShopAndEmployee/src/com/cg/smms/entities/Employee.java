@@ -13,18 +13,18 @@ public class Employee implements Serializable {
 
 //	id
 	@Id // PK
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int empId;
 
-	public int getId() {
-		return id;
+	public int getEmpId() {
+		return empId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setEmpId(int empId) {
+		this.empId = empId;
 	}
 
-//	name
+	// name
 	private String name;
 
 	public String getName() {
@@ -79,18 +79,16 @@ public class Employee implements Serializable {
 		this.designation = designation;
 	}
 
-////	shop_id
-//	@ManyToOne
-////	(cascade = CascadeType.ALL)
-////	@JoinColumn(name = "shop_id") // FK
-//	private Shop shop_id;
-//
-//	public Shop getShop_id() {
-//		return shop_id;
-//	}
-//
-//	public void setShop_id(Shop shop_id) {
-//		this.shop_id = shop_id;
-//	}
+//	shopId
+	@OneToOne(mappedBy = "employee")
+	private Shop shop;
+
+	public Shop getShop() {
+		return shop;
+	}
+
+	public void setShop(Shop shop) {
+		this.shop = shop;
+	}
 
 }

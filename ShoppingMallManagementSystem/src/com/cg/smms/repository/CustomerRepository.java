@@ -28,14 +28,14 @@ public class CustomerRepository implements ICustomerRepository {
 
 //	searchCustomer
 	@Override
-	public Customer searchCustomer(long id) {
+	public Customer searchCustomer(int id) {
 		Customer customer = entityManager.find(Customer.class, id);
 		return customer;
 	}
 
 //	deleteCustomer
 	@Override
-	public boolean deleteCustomer(long id) {
+	public boolean deleteCustomer(int id) {
 		entityManager.remove(searchCustomer(id));
 		return true;
 	}
